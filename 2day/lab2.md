@@ -38,10 +38,15 @@ db = deletes a word before cursor.
 Ctrl+R = Redo 
 u      = Undo 
 
-9. find multiple strings and replace with a word.
+9. cp file /etc/services to your directory and using vim replace all 'tcp' words with the word 'null'.
 :g/oldword/s//Newword/g = substitutes the 'oldword' with a new one in the entire file.
 :g/oldword/s//newword/  = substitutes the 'oldword' with a new one on every line of the file.
 
+10. Using visual mode in vim copy-paste text,and cut-paste text.
+In command mode, type 'v' to enter visual mode and select text after selecting.
+y = to copy
+x = to cut
+p = paste
 
 # less & more
 
@@ -68,7 +73,14 @@ delete the file in home directory and see what will happen to the one in /tmp fo
 3. list the contents of the tar file.
 4. extract your compressed archive to /tmp folder.
 
-# filesystem structure.
-1. what is the difference between / and /root directory?
+# basic path structure.
+1. what is the difference between '/' and '/root' directory?
 2. by default user folders located in which directory?
 3. difference between absolute and relative path?
+
+# Using history.
+1. List your previous commands and recall one of it.
+2. Do the same as above but with using fc command.
+3. clear your history.
+
+
