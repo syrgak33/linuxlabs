@@ -18,9 +18,9 @@
 11. find files recently modified, changed or accessed, using atime,amin,ctime,mmin,cmin.
 12. find files that don't belong to the root user and bigger than 1 megabyte, use pipe and nl. 
 13. find files in /usr/share bigger than 5 megabytes, using '-ok' option copy them to homedirectory, then delete.
+14. find all symbolic links in /usr/bin directory
 
 # tar 
-
 1. create several files, using tar archive them and compress with gzip compression method, do the same but with bzip2 and xz. 
 2. using tar command list the contents of your newly created archive file.
 3. unarchive it again to /tmp directory using verbose option.
