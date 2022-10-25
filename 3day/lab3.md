@@ -20,3 +20,5 @@
 2. list all existing aliases. 
 3. create an alias to display your OS details. (/etc/os-release)
 
+# head & tail
+
