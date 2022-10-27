@@ -12,19 +12,19 @@
 5. find all files in /etc directory and use -exec or xargs to check size with 'du -sh' on every single file.
 6. find files owned by your user. (specify path /home/)
 7. find files owned by your group. 
-8. create a user with home directory and delete it, but keep the home directory, then find the files by specifying -nouser option or -nogroup option.
+8. create a user with home directory then delete that user, but keep it's home directory, then serach for files by specifying -nouser option or -nogroup option.
 9. find files with exact permission 777 and pipe the output to nl command to count the result.
 10. find all executable files add -ls option in the end to see the results with detailed info.
 11. find files recently modified, changed or accessed, using atime,amin,ctime,mmin,cmin.
 12. find files that don't belong to the root user and bigger than 1 megabyte, use pipe and nl. 
-13. find files in /usr/share bigger than 5 megabytes, using '-ok' option copy them to homedirectory, then delete.
+13. find files in /usr/share bigger than 5 megabytes, using '-ok' option, copy them to home directory(to avoid messing up home directory, create a new folder and copy into it.
 14. find all symbolic links in /usr/bin directory
 
 # tar 
-1. create several files, using tar archive them and compress with gzip compression method, do the same but with bzip2 and xz. 
-2. using tar command list the contents of your newly created archive file.
+1. create several files, using tar archive them and compress with gzip compression method, do the same but with bzip2 and xz compression format.
+2. using tar command, list the contents of your newly created archive file.
 3. unarchive it again to /tmp directory using verbose option.
-4. archive and compress /etc and /var directory to a one file.
-5. delete files that you created.
+4. archive and compress /etc and /var directory to a new compressed archive file.
+5. Remove files created earlier.
 
 

@@ -14,17 +14,22 @@
   b. cat 384739473 || echo 'why do echo works now?'
   c. ls ~ || echo 'No errors || echo won't Run'
   d. ls ~ ; echo 'always works' ; date
+
 # Metacharacters * ? []
 1. Using ls and [] list the files or folders in /etc/ directory that starts with letters a,s,m.
 2. Using ls -ld list files and dirs in /etc/  containing only 5 characters.
 3. list all .conf files in /etc/ directory.
+
 # Metacharacters < <<
 1. what is the difference between these two commands? 
     a. cat /etc/group
     b. cat < /etc/group
 2. Write a small text using 'cat', '<<' and '>'  symbols.  
-# Metacharacters $() ()
-1. Using echo,date and $() character, write the text below, substitute the words (Thursday,5,December,2022) with date command.
-   a. Today is Thursday, 5th of December, year 2022.
 
+# Metacharacters $() ()
+1. Using echo,date and $() characters, write the text below, substitute the words (Thursday,5,December,2022) with date command options.
+   a. Today is Thursday, 5th of December, year 2022.
+2. using <() and paste command combine columns of two command's output.
+
+ 
 
