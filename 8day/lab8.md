@@ -31,5 +31,15 @@
    a. Today is Thursday, 5th of December, year 2022.
 2. using <() and paste command combine columns of two command's output.
 
- 
+# SUID GUID sticky bits.
+1. find all files in /usr/bin directory with SUID permissions enabled. 
+2. find all files in /usr/bin directory with GUID permissions enabled. See the groups they belong.
+3. Create a file add full permission 777 and sticky bit, send this file to /tmp folder, login as another user, t ry to delete it. 
+4. what is the difference between 's' and capital 'S' while checking SUID and GUID?
+5. what is the difference between simple execute permission and SUID&GUID permissions?
+
+# ACL Access Control List.
+1. create a file in /tmp as root and list ACLs of that file. Add any user to ACL of that file, so that he could read and write into it. Login as a user who doesn't have any acl permissions and try to change contents of a file.
+2. Remove ACLs from created file.
+
 

@@ -12,4 +12,5 @@
 3. Research about what systemd-analyze command can do, find the subcommand, that helps with troubleshooting boot-up time.
 
 # timedatectl 
+
  
