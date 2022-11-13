@@ -5,6 +5,7 @@ Check the result in /etc/passwd. Check the password hash in /etc/shadow
 3. Add password to your user. You can see the hash of your password in /etc/shadow file.
 4. Using usermod change the shell of the user azure to '/bin/bash'. 
 5. Add a new group named testing with groupID 315.
+     ## if it is an Ubuntu machine,you can change visudo editor from nano to vim with this command: sudo update-alternatives --config editor  , and choose vim.basic.
 6. Add your created user to the testing group and sudoers group(in CentOS its called wheel, in ubuntu sudo)
 7. Login to your azure user and temporarily have the testing group as primary group, create a file in the azure's home directory and see to which group it belongs.
 8. Delete the azure user, but keep the home directory.
@@ -26,5 +27,11 @@ give permission 600 and try to execute it with dot and slash like './echoscript'
     a. Try to list the contents of created folder. Give read permissions to it and list it again.
     b. Try to create a file in a folder. Give write and execute permissions to created folder and try to create file again.
 5. touch a file that can be read&write by the user, read by the group, and no permission to others.
+
+# sudoers
+1. Open the sudoers file via visudo command, and disable password prompt for sudo users.
+2. Create a configuration file in /etc/sudoers.d/ directory, which contains 1 line, example: username  ALL=(ALL) /bin/touch,/bin/ls  
+Notes for the 2nd task, read README file in /etc/sudoers.d/ directory, it has some hints on creating sudoers file for a user. After that your user can now run 2(ls,touch) commands via sudo.
+To check the result create a file in /root directory using sudo, or try to run 'systemctl restart sshd', since it requires sudo privileges.
 
 
