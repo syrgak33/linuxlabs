@@ -21,6 +21,6 @@
 7. On Ubuntu, service name of ntp is systemd-timesyncd.service, check status with systemctl.
 8. Check the status of ntp service on CentOS, what service it might be?
 
-# service command (replaced with systemctl, but still usable)
+# service command (for an older Operating systems using initV, but still usable in systemd OS)
 1. try to display status of sshd with 'service' command. (it can also start, restart,stop) 
-
+2. Using top, or 'ps -p 1' you can determine which init process you have, systemd or initV.
