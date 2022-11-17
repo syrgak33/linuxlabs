@@ -1,6 +1,6 @@
 # Environment variables & aliases.
-1. Create a directory /opt/bin/ as root, and export this directory to the end of your PATH variable,(caution! - if you make a mistake while changing default PATH variable, you will break your shell.)
-2. Currently your history command doesn't show commands execution time, add HISTTIMEFORMAT variable to your .bashrc source it and run history. 
+1. Echo $PATH variable to list it's directories. Create a directory /opt/bin/ as root, and using export command add this directory to the end of your PATH variable,(caution! - if you make a mistake while changing default PATH variable, you will break your shell.)  
+2. Currently your history command doesn't show commands execution time, add HISTTIMEFORMAT variable to your .bashrc source it(using source command) and run history. 
 3. Create environment variable COLOR=RED in /etc/profile.d/customvars file. Source it and  check with echo. Open new bash shell(just type 'bash') and try to echo $COLOR again. Do the same steps but with command: export COLOR=RED in that file. 
 4. Research about common env variables: SHLVL,RANDOM,SECONDS,HOME,USER,PPID,PS1,SHELL.
 5. For extra security, try adding TMOUT variable, if you like it, add to your .bashrc to make it permanent.
@@ -33,13 +33,5 @@
 
 # SUID GUID sticky bits.
 1. find all files in /usr/bin directory with SUID permissions enabled. 
-2. find all files in /usr/bin directory with GUID permissions enabled. See the groups they belong.
-3. Create a file add full permission 777 and sticky bit, send this file to /tmp folder, login as another user, t ry to delete it. 
-4. what is the difference between 's' and capital 'S' while checking SUID and GUID?
-5. what is the difference between simple execute permission and SUID&GUID permissions?
-
-# ACL Access Control List.
-1. create a file in /tmp as root and list ACLs of that file. Add any user to ACL of that file, so that he could read and write into it. Login as a user who doesn't have any acl permissions and try to change contents of a file.
-2. Remove ACLs from created file.
-
-
+2. find all files in /usr/bin directory with GID permissions enabled. See the groups they belong.
+3. Create 2 files in /tmp directory as 2 different users, try to delete each others file.
