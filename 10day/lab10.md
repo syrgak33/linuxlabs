@@ -5,17 +5,15 @@ Before implementing steps below, turn off your virtual machine and create a new 
 Virtual hard disk that you added usually called /dev/sdb(or it might be sdc,sdd...,if you already have sdb disk), when you list devices.
 3. Using gdisk /dev/sdb, open gdisk command prompt, type 'm' to get help.
    a. Print the partition table to see some information about your device.
-   b. Create a new partition, enter partition number, skip first sector, specify last sector
-like +500M or +1G. Use default hex code, 8300. 
+   b. Create a new partition, enter partition number, skip first sector, specify last sectorsize, like +500M or +1G. Use default hex code, 8300. 
    c. Type 'p' to print created partition.
    d. Type 'w' to save and exit.
    f. Using lsblk list your block devices again, and you should see now your sdb1 partition.
 4. Using mkfs command build a filesystem on /dev/sdb1. Use xfs or ext4 filesystem type.
-5. Using lsblk -f list block devices with fstype.
+5. Using lsblk -f list block devices with filesystem type.
 6. Create a folder in /mnt/ directory, and mount your partition to this folder.
-7. Open /etc/fstab and add a line to permanently mount your created partition to a folder, otherwise
-your mounted partition will unmount after restarting virtual machine.
-8. No with the command 'df' check the space usage of the new partition and specify the option to display the filesystem type.
+7. Check UUID using lsblk -f, open /etc/fstab and add a line to permanently mount your created partition to a folder, otherwise your mounted partition will unmount after restarting virtual machine. 
+8. Now with the command 'df' check the space usage of the newly created  and specify the option to display the filesystem type.
 
 # Creating LVM group. TAB completion and manuals help a lot.
 1. Open gdisk again, and create 2nd partition,skip first sector, last sector size = 5 GB, choose partition type = Linux LVM. List partitions in gdisk to check the result, then write table and exit gdisk.
@@ -30,10 +28,13 @@ your mounted partition will unmount after restarting virtual machine.
 10. Create a folder in home directory and mount your lvolume to this folder. 
 11. Now using lvextend take all space from Volume group and add to your logical volume using -l option.
 12. Resize your filesystem on logical volume, using resize2fs(for ext4) or xfs_growfs(for xfs).
-13. Now check the result using df -h if size changed.
+13. Now check the result using df -h if size has been changed.
 
 # Extending Volume group
 1. Create 3rd partition, choose size and partition type should be Linux LVM. Write and exit gdisk.
 2. Using pvcreate select created partition and add to physical volumes.
 3. Using vgextend add new physical volume(partition)to previously created volume group not the system one. 
 4. List volume groups and look at the #PV column, it should change.
+
+# Extending logical volume.
+
