@@ -36,5 +36,3 @@ Virtual hard disk that you added usually called /dev/sdb(or it might be sdc,sdd.
 3. Using vgextend add new physical volume(partition)to previously created volume group not the system one. 
 4. List volume groups and look at the #PV column, it should change.
 
-# Extending logical volume.
-
